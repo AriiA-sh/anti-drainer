@@ -1,17 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "SigGuard // Anti-Drainer",
-  "version": "1.0.0",
-  "description": "Intercepts blind signing and malicious eth_sign/eth_sendTransaction requests.",
+  "name": "SigGuard",
+  "version": "1.0",
+  "description": "Zero-Knowledge Web3 Anti-Drainer",
   "permissions": [
     "storage"
   ],
+  "action": {
+    "default_popup": "popup.html"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["content.js"],
-      "run_at": "document_start",
-      "all_frames": true
+      "run_at": "document_start"
     }
   ],
   "web_accessible_resources": [
